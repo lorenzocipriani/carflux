@@ -1,0 +1,62 @@
+<Alloy>
+	<Collection src="engine" />
+	<TabGroup>
+		<Tab title="Dashboard" icon="nav_car.png">
+			<Window title="Dashboard">
+				 <TableView id="engineTable" dataCollection="engine">
+					<TableViewRow id="engineDashboard" model_id="{model}">
+						<Label id="fuelConsumption" text="{fuelConsumption}"></Label>
+						<Label id="fuelAutonomy" text="{fuelAutonomy}"></Label>
+						<Label id="engineStatus" text="{engineStatus}"></Label>
+						<Label id="batteryCharge" text="{batteryCharge}"></Label>
+            		</TableViewRow>
+		        </TableView>
+			</Window>
+		</Tab>
+		<Tab title="Trips" icon="nav_map.png">
+			<Window title="Trips">
+				<View id="mapview" ns="Ti.Map" onClick="doClick"
+						animate="true" regionFit="true" userLocation="true"
+						mapType="Ti.Map.STANDARD_TYPE" >
+				
+					<Annotation id="carfluxMap"
+						latitude="52.45543" longitude="13.52501"
+						title="Carflux AngelHack" subtitle="Berlin"
+						pincolor="Titanium.Map.ANNOTATION_RED"
+						myid="1"/>
+					
+					<!-- Place other child views here, such as an ImageView to add an overlay. -->
+				
+				</View>
+			</Window>
+		</Tab>
+		<Tab title="Parking" icon="nav_friends.png">
+			<Window title="Parking">
+				<Label>Start</Label>
+				<Label>Stop</Label>
+				<Label>Pay</Label>
+			</Window>
+		</Tab>
+		<Tab title="Highscores" icon="nav_friends.png">
+			<Window title="Highscores">
+				<Label>Name 1</Label>
+				<Label>Name 2</Label>
+				<Label>Name 3</Label>
+				<Label>Name 4</Label>
+				<Label>Name 5</Label>
+			</Window>
+		</Tab>
+		<Tab title="Profile" icon="nav_flux.png">
+			<Window title="Profile">
+				<Label>Profile</Label>
+			</Window>
+		</Tab>
+		<Tab title="Alarms" icon="nav_friends.png">
+			<Window title="Parking">
+				<Label>Accident</Label>
+				<Label>Engine</Label>
+				<Label>Fuel</Label>
+			</Window>
+		</Tab>
+	</TabGroup>
+</Alloy>
