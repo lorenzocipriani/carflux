@@ -1,9 +1,28 @@
 
 $.index.open();
 
+var engineData = Alloy.Collections.instance("engine");
 
-var engineData = Alloy.createCollection('engine'); 
+engineData.on("change",function() {
+	console.log("change: "+engineData.length);
+	
+	if(engineData.length > 0) {
+		console.log("at: "+engineData.at(engineData.length-1).get("fuelConsumption"));
+	}
+});
+
+engineData.push(Alloy.createModel("engine",{
+	"model": "1",
+    "fuelConsumption": "4 l/100km",
+    "fuelAutonomy": "150 km",
+    "engineStatus": "ON",
+    "batteryCharge": "95%"
+}));
+
 engineData.fetch();
+
+  
+console.log("length: "+engineData.length);
 
 function doClick(evt){
     Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);

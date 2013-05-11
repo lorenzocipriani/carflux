@@ -48,7 +48,9 @@
 		</Tab>
 		<Tab title="Profile" icon="nav_flux.png">
 			<Window title="Profile">
-				<Label>Profile</Label>
+				<ScrollView disableBounce="false">
+					<ImageView id="profileImage" image="/profile.jpg"/>
+				</ScrollView>
 			</Window>
 		</Tab>
 		<Tab title="Alarms" icon="nav_friends.png">

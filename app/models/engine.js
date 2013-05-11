@@ -16,7 +16,7 @@ exports.definition = {
             "batteryCharge": "95%"
         },
         adapter: {
-			type: "sql",
+			type: "device",
 			collection_name: "engine"
 		}
 	},		

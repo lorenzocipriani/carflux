@@ -276,19 +276,18 @@ function Controller() {
         title: "Profile",
         id: "__alloyId30"
     });
-    $.__views.__alloyId31 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Profile",
+    $.__views.__alloyId31 = Ti.UI.createScrollView({
+        disableBounce: "false",
         id: "__alloyId31"
     });
     $.__views.__alloyId30.add($.__views.__alloyId31);
+    $.__views.profileImage = Ti.UI.createImageView({
+        width: 320,
+        height: 606,
+        id: "profileImage",
+        image: "/profile.jpg"
+    });
+    $.__views.__alloyId31.add($.__views.profileImage);
     $.__views.__alloyId29 = Ti.UI.createTab({
         window: $.__views.__alloyId30,
         title: "Profile",
@@ -353,8 +352,20 @@ function Controller() {
     };
     _.extend($, $.__views);
     $.index.open();
-    var engineData = Alloy.createCollection("engine");
+    var engineData = Alloy.Collections.instance("engine");
+    engineData.on("change", function() {
+        console.log("change: " + engineData.length);
+        engineData.length > 0 && console.log("at: " + engineData.at(engineData.length - 1).get("fuelConsumption"));
+    });
+    engineData.push(Alloy.createModel("engine", {
+        model: "1",
+        fuelConsumption: "4 l/100km",
+        fuelAutonomy: "150 km",
+        engineStatus: "ON",
+        batteryCharge: "95%"
+    }));
     engineData.fetch();
+    console.log("length: " + engineData.length);
     $.mapview.annotations = [ $.carfluxMap ];
     $.mapview.region = {
         latitude: 52.45543,

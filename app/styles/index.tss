@@ -33,3 +33,8 @@
 	},
 	textAlign: 'right'
 } 
+
+"#profileImage": {
+	width: 320,
+	height: 606
+}
