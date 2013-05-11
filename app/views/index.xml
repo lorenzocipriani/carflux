@@ -5,19 +5,20 @@
 			<Window title="Dashboard">
 			 	<TableView id="engineTable" dataCollection="engine">
 			 		<TableViewSection>
-						<TableViewRow>
+						<TableViewRow layout="horizontal">
+							<Label text="Consumption: "/>
 							<Label text="{fuelConsumption}"/>		
 						</TableViewRow>
-						<TableViewRow>
-							<Label text="{fuelConsumption}"></Label>
-						</TableViewRow>
-						<TableViewRow>
+						<TableViewRow layout="horizontal">
+							<Label text="Autonomy: "/>
 							<Label text="{fuelAutonomy}"></Label>
 						</TableViewRow>
-						<TableViewRow>
+						<TableViewRow layout="horizontal">
+							<Label text="Status: "/>
 							<Label text="{engineStatus}"></Label>
 						</TableViewRow>
-						<TableViewRow>
+						<TableViewRow layout="horizontal">
+							<Label text="Battery: "/>
 							<Label text="{batteryCharge}"></Label>
 	            		</TableViewRow>
             		</TableViewSection>

@@ -1,6 +1,6 @@
 function Controller() {
-    function __alloyId30() {
-        var models = __alloyId29.models;
+    function __alloyId34() {
+        var models = __alloyId33.models;
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
@@ -9,10 +9,11 @@ function Controller() {
             var __alloyId8 = Ti.UI.createTableViewSection({});
             rows.push(__alloyId8);
             var __alloyId10 = Ti.UI.createTableViewRow({
-                width: Ti.UI.SIZE,
+                width: "100%",
                 height: Ti.UI.SIZE,
                 color: "#000",
-                textAlign: "right"
+                textAlign: "right",
+                layout: "horizontal"
             });
             __alloyId8.add(__alloyId10);
             var __alloyId12 = Ti.UI.createLabel({
@@ -24,17 +25,10 @@ function Controller() {
                     fontFamily: "Helvetica Neue"
                 },
                 textAlign: "center",
-                text: "undefined" != typeof __alloyId7.__transform["fuelConsumption"] ? __alloyId7.__transform["fuelConsumption"] : __alloyId7.get("fuelConsumption")
+                text: "Consumption: "
             });
             __alloyId10.add(__alloyId12);
-            var __alloyId14 = Ti.UI.createTableViewRow({
-                width: Ti.UI.SIZE,
-                height: Ti.UI.SIZE,
-                color: "#000",
-                textAlign: "right"
-            });
-            __alloyId8.add(__alloyId14);
-            var __alloyId16 = Ti.UI.createLabel({
+            var __alloyId14 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
                 color: "#000",
@@ -45,14 +39,27 @@ function Controller() {
                 textAlign: "center",
                 text: "undefined" != typeof __alloyId7.__transform["fuelConsumption"] ? __alloyId7.__transform["fuelConsumption"] : __alloyId7.get("fuelConsumption")
             });
-            __alloyId14.add(__alloyId16);
-            var __alloyId18 = Ti.UI.createTableViewRow({
+            __alloyId10.add(__alloyId14);
+            var __alloyId16 = Ti.UI.createTableViewRow({
+                width: "100%",
+                height: Ti.UI.SIZE,
+                color: "#000",
+                textAlign: "right",
+                layout: "horizontal"
+            });
+            __alloyId8.add(__alloyId16);
+            var __alloyId18 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
                 color: "#000",
-                textAlign: "right"
+                font: {
+                    fontSize: 20,
+                    fontFamily: "Helvetica Neue"
+                },
+                textAlign: "center",
+                text: "Autonomy: "
             });
-            __alloyId8.add(__alloyId18);
+            __alloyId16.add(__alloyId18);
             var __alloyId20 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
@@ -64,12 +71,13 @@ function Controller() {
                 textAlign: "center",
                 text: "undefined" != typeof __alloyId7.__transform["fuelAutonomy"] ? __alloyId7.__transform["fuelAutonomy"] : __alloyId7.get("fuelAutonomy")
             });
-            __alloyId18.add(__alloyId20);
+            __alloyId16.add(__alloyId20);
             var __alloyId22 = Ti.UI.createTableViewRow({
-                width: Ti.UI.SIZE,
+                width: "100%",
                 height: Ti.UI.SIZE,
                 color: "#000",
-                textAlign: "right"
+                textAlign: "right",
+                layout: "horizontal"
             });
             __alloyId8.add(__alloyId22);
             var __alloyId24 = Ti.UI.createLabel({
@@ -81,17 +89,42 @@ function Controller() {
                     fontFamily: "Helvetica Neue"
                 },
                 textAlign: "center",
-                text: "undefined" != typeof __alloyId7.__transform["engineStatus"] ? __alloyId7.__transform["engineStatus"] : __alloyId7.get("engineStatus")
+                text: "Status: "
             });
             __alloyId22.add(__alloyId24);
-            var __alloyId26 = Ti.UI.createTableViewRow({
+            var __alloyId26 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
                 color: "#000",
-                textAlign: "right"
+                font: {
+                    fontSize: 20,
+                    fontFamily: "Helvetica Neue"
+                },
+                textAlign: "center",
+                text: "undefined" != typeof __alloyId7.__transform["engineStatus"] ? __alloyId7.__transform["engineStatus"] : __alloyId7.get("engineStatus")
             });
-            __alloyId8.add(__alloyId26);
-            var __alloyId28 = Ti.UI.createLabel({
+            __alloyId22.add(__alloyId26);
+            var __alloyId28 = Ti.UI.createTableViewRow({
+                width: "100%",
+                height: Ti.UI.SIZE,
+                color: "#000",
+                textAlign: "right",
+                layout: "horizontal"
+            });
+            __alloyId8.add(__alloyId28);
+            var __alloyId30 = Ti.UI.createLabel({
+                width: Ti.UI.SIZE,
+                height: Ti.UI.SIZE,
+                color: "#000",
+                font: {
+                    fontSize: 20,
+                    fontFamily: "Helvetica Neue"
+                },
+                textAlign: "center",
+                text: "Battery: "
+            });
+            __alloyId28.add(__alloyId30);
+            var __alloyId32 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
                 color: "#000",
@@ -102,7 +135,7 @@ function Controller() {
                 textAlign: "center",
                 text: "undefined" != typeof __alloyId7.__transform["batteryCharge"] ? __alloyId7.__transform["batteryCharge"] : __alloyId7.get("batteryCharge")
             });
-            __alloyId26.add(__alloyId28);
+            __alloyId28.add(__alloyId32);
         }
         $.__views.engineTable.setData(rows);
     }
@@ -133,8 +166,8 @@ function Controller() {
         id: "engineTable"
     });
     $.__views.__alloyId5.add($.__views.engineTable);
-    var __alloyId29 = Alloy.Collections["engine"] || engine;
-    __alloyId29.on("fetch destroy change add remove reset", __alloyId30);
+    var __alloyId33 = Alloy.Collections["engine"] || engine;
+    __alloyId33.on("fetch destroy change add remove reset", __alloyId34);
     $.__views.__alloyId4 = Ti.UI.createTab({
         window: $.__views.__alloyId5,
         title: "Dashboard",
@@ -142,12 +175,12 @@ function Controller() {
         id: "__alloyId4"
     });
     $.__views.index.addTab($.__views.__alloyId4);
-    $.__views.__alloyId32 = Ti.UI.createWindow({
+    $.__views.__alloyId36 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Trips",
-        id: "__alloyId32"
+        id: "__alloyId36"
     });
-    var __alloyId33 = [];
+    var __alloyId37 = [];
     $.__views.carfluxMap = Ti.Map.createAnnotation({
         id: "carfluxMap",
         latitude: "52.45543",
@@ -157,9 +190,9 @@ function Controller() {
         pincolor: Titanium.Map.ANNOTATION_RED,
         myid: "1"
     });
-    __alloyId33.push($.__views.carfluxMap);
+    __alloyId37.push($.__views.carfluxMap);
     $.__views.mapview = Ti.Map.createView({
-        annotations: __alloyId33,
+        annotations: __alloyId37,
         id: "mapview",
         ns: Ti.Map,
         animate: "true",
@@ -167,21 +200,21 @@ function Controller() {
         userLocation: "true",
         mapType: Ti.Map.STANDARD_TYPE
     });
-    $.__views.__alloyId32.add($.__views.mapview);
+    $.__views.__alloyId36.add($.__views.mapview);
     doClick ? $.__views.mapview.addEventListener("click", doClick) : __defers["$.__views.mapview!click!doClick"] = true;
-    $.__views.__alloyId31 = Ti.UI.createTab({
-        window: $.__views.__alloyId32,
+    $.__views.__alloyId35 = Ti.UI.createTab({
+        window: $.__views.__alloyId36,
         title: "Trips",
         icon: "nav_map.png",
-        id: "__alloyId31"
-    });
-    $.__views.index.addTab($.__views.__alloyId31);
-    $.__views.__alloyId35 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Parking",
         id: "__alloyId35"
     });
-    $.__views.__alloyId36 = Ti.UI.createLabel({
+    $.__views.index.addTab($.__views.__alloyId35);
+    $.__views.__alloyId39 = Ti.UI.createWindow({
+        backgroundColor: "#fff",
+        title: "Parking",
+        id: "__alloyId39"
+    });
+    $.__views.__alloyId40 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         color: "#000",
@@ -191,47 +224,9 @@ function Controller() {
         },
         textAlign: "center",
         text: "Start",
-        id: "__alloyId36"
-    });
-    $.__views.__alloyId35.add($.__views.__alloyId36);
-    $.__views.__alloyId37 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Stop",
-        id: "__alloyId37"
-    });
-    $.__views.__alloyId35.add($.__views.__alloyId37);
-    $.__views.__alloyId38 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Pay",
-        id: "__alloyId38"
-    });
-    $.__views.__alloyId35.add($.__views.__alloyId38);
-    $.__views.__alloyId34 = Ti.UI.createTab({
-        window: $.__views.__alloyId35,
-        title: "Parking",
-        icon: "nav_friends.png",
-        id: "__alloyId34"
-    });
-    $.__views.index.addTab($.__views.__alloyId34);
-    $.__views.__alloyId40 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Highscores",
         id: "__alloyId40"
     });
+    $.__views.__alloyId39.add($.__views.__alloyId40);
     $.__views.__alloyId41 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -241,10 +236,10 @@ function Controller() {
             fontFamily: "Helvetica Neue"
         },
         textAlign: "center",
-        text: "Name 1",
+        text: "Stop",
         id: "__alloyId41"
     });
-    $.__views.__alloyId40.add($.__views.__alloyId41);
+    $.__views.__alloyId39.add($.__views.__alloyId41);
     $.__views.__alloyId42 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -254,36 +249,22 @@ function Controller() {
             fontFamily: "Helvetica Neue"
         },
         textAlign: "center",
-        text: "Name 2",
+        text: "Pay",
         id: "__alloyId42"
     });
-    $.__views.__alloyId40.add($.__views.__alloyId42);
-    $.__views.__alloyId43 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Name 3",
-        id: "__alloyId43"
+    $.__views.__alloyId39.add($.__views.__alloyId42);
+    $.__views.__alloyId38 = Ti.UI.createTab({
+        window: $.__views.__alloyId39,
+        title: "Parking",
+        icon: "nav_friends.png",
+        id: "__alloyId38"
     });
-    $.__views.__alloyId40.add($.__views.__alloyId43);
-    $.__views.__alloyId44 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Name 4",
+    $.__views.index.addTab($.__views.__alloyId38);
+    $.__views.__alloyId44 = Ti.UI.createWindow({
+        backgroundColor: "#fff",
+        title: "Highscores",
         id: "__alloyId44"
     });
-    $.__views.__alloyId40.add($.__views.__alloyId44);
     $.__views.__alloyId45 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
@@ -293,47 +274,99 @@ function Controller() {
             fontFamily: "Helvetica Neue"
         },
         textAlign: "center",
-        text: "Name 5",
+        text: "Name 1",
         id: "__alloyId45"
     });
-    $.__views.__alloyId40.add($.__views.__alloyId45);
-    $.__views.__alloyId39 = Ti.UI.createTab({
-        window: $.__views.__alloyId40,
-        title: "Highscores",
-        icon: "nav_friends.png",
-        id: "__alloyId39"
+    $.__views.__alloyId44.add($.__views.__alloyId45);
+    $.__views.__alloyId46 = Ti.UI.createLabel({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        color: "#000",
+        font: {
+            fontSize: 20,
+            fontFamily: "Helvetica Neue"
+        },
+        textAlign: "center",
+        text: "Name 2",
+        id: "__alloyId46"
     });
-    $.__views.index.addTab($.__views.__alloyId39);
-    $.__views.__alloyId47 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Profile",
+    $.__views.__alloyId44.add($.__views.__alloyId46);
+    $.__views.__alloyId47 = Ti.UI.createLabel({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        color: "#000",
+        font: {
+            fontSize: 20,
+            fontFamily: "Helvetica Neue"
+        },
+        textAlign: "center",
+        text: "Name 3",
         id: "__alloyId47"
     });
-    $.__views.__alloyId48 = Ti.UI.createScrollView({
-        disableBounce: "false",
+    $.__views.__alloyId44.add($.__views.__alloyId47);
+    $.__views.__alloyId48 = Ti.UI.createLabel({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        color: "#000",
+        font: {
+            fontSize: 20,
+            fontFamily: "Helvetica Neue"
+        },
+        textAlign: "center",
+        text: "Name 4",
         id: "__alloyId48"
     });
-    $.__views.__alloyId47.add($.__views.__alloyId48);
+    $.__views.__alloyId44.add($.__views.__alloyId48);
+    $.__views.__alloyId49 = Ti.UI.createLabel({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        color: "#000",
+        font: {
+            fontSize: 20,
+            fontFamily: "Helvetica Neue"
+        },
+        textAlign: "center",
+        text: "Name 5",
+        id: "__alloyId49"
+    });
+    $.__views.__alloyId44.add($.__views.__alloyId49);
+    $.__views.__alloyId43 = Ti.UI.createTab({
+        window: $.__views.__alloyId44,
+        title: "Highscores",
+        icon: "nav_friends.png",
+        id: "__alloyId43"
+    });
+    $.__views.index.addTab($.__views.__alloyId43);
+    $.__views.__alloyId51 = Ti.UI.createWindow({
+        backgroundColor: "#fff",
+        title: "Profile",
+        id: "__alloyId51"
+    });
+    $.__views.__alloyId52 = Ti.UI.createScrollView({
+        disableBounce: "false",
+        id: "__alloyId52"
+    });
+    $.__views.__alloyId51.add($.__views.__alloyId52);
     $.__views.profileImage = Ti.UI.createImageView({
         width: 320,
         height: 606,
         id: "profileImage",
         image: "/profile.jpg"
     });
-    $.__views.__alloyId48.add($.__views.profileImage);
-    $.__views.__alloyId46 = Ti.UI.createTab({
-        window: $.__views.__alloyId47,
+    $.__views.__alloyId52.add($.__views.profileImage);
+    $.__views.__alloyId50 = Ti.UI.createTab({
+        window: $.__views.__alloyId51,
         title: "Profile",
         icon: "nav_flux.png",
-        id: "__alloyId46"
-    });
-    $.__views.index.addTab($.__views.__alloyId46);
-    $.__views.__alloyId50 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Parking",
         id: "__alloyId50"
     });
-    $.__views.__alloyId51 = Ti.UI.createLabel({
+    $.__views.index.addTab($.__views.__alloyId50);
+    $.__views.__alloyId54 = Ti.UI.createWindow({
+        backgroundColor: "#fff",
+        title: "Parking",
+        id: "__alloyId54"
+    });
+    $.__views.__alloyId55 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         color: "#000",
@@ -343,10 +376,10 @@ function Controller() {
         },
         textAlign: "center",
         text: "Accident",
-        id: "__alloyId51"
+        id: "__alloyId55"
     });
-    $.__views.__alloyId50.add($.__views.__alloyId51);
-    $.__views.__alloyId52 = Ti.UI.createLabel({
+    $.__views.__alloyId54.add($.__views.__alloyId55);
+    $.__views.__alloyId56 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         color: "#000",
@@ -356,10 +389,10 @@ function Controller() {
         },
         textAlign: "center",
         text: "Engine",
-        id: "__alloyId52"
+        id: "__alloyId56"
     });
-    $.__views.__alloyId50.add($.__views.__alloyId52);
-    $.__views.__alloyId53 = Ti.UI.createLabel({
+    $.__views.__alloyId54.add($.__views.__alloyId56);
+    $.__views.__alloyId57 = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         color: "#000",
@@ -369,19 +402,19 @@ function Controller() {
         },
         textAlign: "center",
         text: "Fuel",
-        id: "__alloyId53"
+        id: "__alloyId57"
     });
-    $.__views.__alloyId50.add($.__views.__alloyId53);
-    $.__views.__alloyId49 = Ti.UI.createTab({
-        window: $.__views.__alloyId50,
+    $.__views.__alloyId54.add($.__views.__alloyId57);
+    $.__views.__alloyId53 = Ti.UI.createTab({
+        window: $.__views.__alloyId54,
         title: "Alarms",
         icon: "nav_friends.png",
-        id: "__alloyId49"
+        id: "__alloyId53"
     });
-    $.__views.index.addTab($.__views.__alloyId49);
+    $.__views.index.addTab($.__views.__alloyId53);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {
-        __alloyId29.off("fetch destroy change add remove reset", __alloyId30);
+        __alloyId33.off("fetch destroy change add remove reset", __alloyId34);
     };
     _.extend($, $.__views);
     $.index.open();
