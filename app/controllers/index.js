@@ -6,7 +6,7 @@ engineData.fetch();
 
 setInterval(function() {
 	engineData.fetch();
-},1000);
+},5000);
 
 function doClick(evt){
     Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
