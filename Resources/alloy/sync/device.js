@@ -3,9 +3,9 @@ module.exports.sync = function(method, model) {
     console.log("model: " + typeof model);
     var url = "http://10.0.0.10";
     var client = Ti.Network.createHTTPClient({
-        onload: function(e) {
+        onload: function() {
             Ti.API.info("Received text: " + this.responseText);
-            var data = JSON.parse(e.responseText);
+            var data = JSON.parse(this.responseText);
             console.log("data: " + typeof data);
             model.add(Alloy.createModel("engine", data));
             console.log("parse: " + model.length);
