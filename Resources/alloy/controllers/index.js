@@ -212,44 +212,21 @@ function Controller() {
     $.__views.__alloyId39 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Parking",
+        layout: "vertical",
         id: "__alloyId39"
     });
-    $.__views.__alloyId40 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Start",
+    $.__views.__alloyId40 = Ti.UI.createButton({
+        title: "Start",
         id: "__alloyId40"
     });
     $.__views.__alloyId39.add($.__views.__alloyId40);
-    $.__views.__alloyId41 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Stop",
+    $.__views.__alloyId41 = Ti.UI.createButton({
+        title: "Stop",
         id: "__alloyId41"
     });
     $.__views.__alloyId39.add($.__views.__alloyId41);
-    $.__views.__alloyId42 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Pay",
+    $.__views.__alloyId42 = Ti.UI.createButton({
+        title: "Pay",
         id: "__alloyId42"
     });
     $.__views.__alloyId39.add($.__views.__alloyId42);
@@ -265,71 +242,17 @@ function Controller() {
         title: "Highscores",
         id: "__alloyId44"
     });
-    $.__views.__alloyId45 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Name 1",
+    $.__views.__alloyId45 = Ti.UI.createScrollView({
         id: "__alloyId45"
     });
     $.__views.__alloyId44.add($.__views.__alloyId45);
-    $.__views.__alloyId46 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Name 2",
+    $.__views.__alloyId46 = Ti.UI.createImageView({
+        width: 320,
+        height: 606,
+        image: "/carflux_app_ct_1-05.jpg",
         id: "__alloyId46"
     });
-    $.__views.__alloyId44.add($.__views.__alloyId46);
-    $.__views.__alloyId47 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Name 3",
-        id: "__alloyId47"
-    });
-    $.__views.__alloyId44.add($.__views.__alloyId47);
-    $.__views.__alloyId48 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Name 4",
-        id: "__alloyId48"
-    });
-    $.__views.__alloyId44.add($.__views.__alloyId48);
-    $.__views.__alloyId49 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Name 5",
-        id: "__alloyId49"
-    });
-    $.__views.__alloyId44.add($.__views.__alloyId49);
+    $.__views.__alloyId45.add($.__views.__alloyId46);
     $.__views.__alloyId43 = Ti.UI.createTab({
         window: $.__views.__alloyId44,
         title: "Highscores",
@@ -337,81 +260,52 @@ function Controller() {
         id: "__alloyId43"
     });
     $.__views.index.addTab($.__views.__alloyId43);
-    $.__views.__alloyId51 = Ti.UI.createWindow({
+    $.__views.__alloyId48 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Profile",
-        id: "__alloyId51"
+        id: "__alloyId48"
     });
-    $.__views.__alloyId52 = Ti.UI.createScrollView({
-        disableBounce: "false",
-        id: "__alloyId52"
+    $.__views.__alloyId49 = Ti.UI.createScrollView({
+        id: "__alloyId49"
     });
-    $.__views.__alloyId51.add($.__views.__alloyId52);
+    $.__views.__alloyId48.add($.__views.__alloyId49);
     $.__views.profileImage = Ti.UI.createImageView({
         width: 320,
         height: 606,
         id: "profileImage",
         image: "/profile.jpg"
     });
-    $.__views.__alloyId52.add($.__views.profileImage);
-    $.__views.__alloyId50 = Ti.UI.createTab({
-        window: $.__views.__alloyId51,
+    $.__views.__alloyId49.add($.__views.profileImage);
+    $.__views.__alloyId47 = Ti.UI.createTab({
+        window: $.__views.__alloyId48,
         title: "Profile",
         icon: "nav_flux.png",
+        id: "__alloyId47"
+    });
+    $.__views.index.addTab($.__views.__alloyId47);
+    $.__views.__alloyId51 = Ti.UI.createWindow({
+        backgroundColor: "#fff",
+        title: "Alarms",
+        id: "__alloyId51"
+    });
+    $.__views.__alloyId52 = Ti.UI.createScrollView({
+        id: "__alloyId52"
+    });
+    $.__views.__alloyId51.add($.__views.__alloyId52);
+    $.__views.__alloyId53 = Ti.UI.createImageView({
+        width: 320,
+        height: 606,
+        image: "/carflux_app_ct_1-01.jpg",
+        id: "__alloyId53"
+    });
+    $.__views.__alloyId52.add($.__views.__alloyId53);
+    $.__views.__alloyId50 = Ti.UI.createTab({
+        window: $.__views.__alloyId51,
+        title: "Alarms",
+        icon: "nav_friends.png",
         id: "__alloyId50"
     });
     $.__views.index.addTab($.__views.__alloyId50);
-    $.__views.__alloyId54 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Parking",
-        id: "__alloyId54"
-    });
-    $.__views.__alloyId55 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Accident",
-        id: "__alloyId55"
-    });
-    $.__views.__alloyId54.add($.__views.__alloyId55);
-    $.__views.__alloyId56 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Engine",
-        id: "__alloyId56"
-    });
-    $.__views.__alloyId54.add($.__views.__alloyId56);
-    $.__views.__alloyId57 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "Fuel",
-        id: "__alloyId57"
-    });
-    $.__views.__alloyId54.add($.__views.__alloyId57);
-    $.__views.__alloyId53 = Ti.UI.createTab({
-        window: $.__views.__alloyId54,
-        title: "Alarms",
-        icon: "nav_friends.png",
-        id: "__alloyId53"
-    });
-    $.__views.index.addTab($.__views.__alloyId53);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {
         __alloyId33.off("fetch destroy change add remove reset", __alloyId34);

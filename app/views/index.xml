@@ -43,33 +43,31 @@
 			</Window>
 		</Tab>
 		<Tab title="Parking" icon="nav_friends.png">
-			<Window title="Parking">
-				<Label>Start</Label>
-				<Label>Stop</Label>
-				<Label>Pay</Label>
+			<Window title="Parking" layout="vertical">
+				<Button title="Start"/>
+				<Button title="Stop"/>
+				<Button title="Pay"/>
 			</Window>
 		</Tab>
 		<Tab title="Highscores" icon="nav_friends.png">
 			<Window title="Highscores">
-				<Label>Name 1</Label>
-				<Label>Name 2</Label>
-				<Label>Name 3</Label>
-				<Label>Name 4</Label>
-				<Label>Name 5</Label>
+				<ScrollView>
+					<ImageView image="/carflux_app_ct_1-05.jpg"/>
+				</ScrollView>
 			</Window>
 		</Tab>
 		<Tab title="Profile" icon="nav_flux.png">
 			<Window title="Profile">
-				<ScrollView disableBounce="false">
+				<ScrollView>
 					<ImageView id="profileImage" image="/profile.jpg"/>
 				</ScrollView>
 			</Window>
 		</Tab>
 		<Tab title="Alarms" icon="nav_friends.png">
-			<Window title="Parking">
-				<Label>Accident</Label>
-				<Label>Engine</Label>
-				<Label>Fuel</Label>
+			<Window title="Alarms">
+				<ScrollView>
+					<ImageView image="/carflux_app_ct_1-01.jpg"/>
+				</ScrollView>
 			</Window>
 		</Tab>
 	</TabGroup>

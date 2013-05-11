@@ -26,8 +26,7 @@
 	textAlign: 'right'
 } 
 
-"#profileImage": {
+"ImageView": {
 	width: 320,
 	height: 606
 }
-
