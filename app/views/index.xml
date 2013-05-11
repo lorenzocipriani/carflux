@@ -3,14 +3,25 @@
 	<TabGroup>
 		<Tab title="Dashboard" icon="nav_car.png">
 			<Window title="Dashboard">
-				 <TableView id="engineTable" dataCollection="engine">
-					<TableViewRow id="engineDashboard" model_id="{model}">
-						<Label id="fuelConsumption" text="{fuelConsumption}"></Label>
-						<Label id="fuelAutonomy" text="{fuelAutonomy}"></Label>
-						<Label id="engineStatus" text="{engineStatus}"></Label>
-						<Label id="batteryCharge" text="{batteryCharge}"></Label>
-            		</TableViewRow>
-		        </TableView>
+			 	<TableView id="engineTable" dataCollection="engine">
+			 		<TableViewSection>
+						<TableViewRow>
+							<Label text="{fuelConsumption}"/>		
+						</TableViewRow>
+						<TableViewRow>
+							<Label text="{fuelConsumption}"></Label>
+						</TableViewRow>
+						<TableViewRow>
+							<Label text="{fuelAutonomy}"></Label>
+						</TableViewRow>
+						<TableViewRow>
+							<Label text="{engineStatus}"></Label>
+						</TableViewRow>
+						<TableViewRow>
+							<Label text="{batteryCharge}"></Label>
+	            		</TableViewRow>
+            		</TableViewSection>
+		     	</TableView>
 			</Window>
 		</Tab>
 		<Tab title="Trips" icon="nav_map.png">
