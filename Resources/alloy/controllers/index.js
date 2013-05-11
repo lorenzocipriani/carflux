@@ -387,7 +387,9 @@ function Controller() {
     $.index.open();
     var engineData = Alloy.Collections.instance("engine");
     engineData.fetch();
-    console.log("length: " + engineData.length);
+    setInterval(function() {
+        engineData.fetch();
+    }, 1e3);
     $.mapview.annotations = [ $.carfluxMap ];
     $.mapview.region = {
         latitude: 52.45543,

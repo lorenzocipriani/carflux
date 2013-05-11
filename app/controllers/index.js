@@ -4,8 +4,9 @@ $.index.open();
 var engineData = Alloy.Collections.instance("engine");
 engineData.fetch();
 
-  
-console.log("length: "+engineData.length);
+setInterval(function() {
+	engineData.fetch();
+},1000);
 
 function doClick(evt){
     Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);

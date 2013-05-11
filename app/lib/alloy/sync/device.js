@@ -1,20 +1,12 @@
 
-module.exports.sync = function(method, model, options) {
-	console.log("method: "+method);	
-	console.log("model: "+typeof(model));
-	
+module.exports.sync = function(method, model, options) {	
 	var url = "http://10.0.0.10";
-	 var client = Ti.Network.createHTTPClient({
+	var client = Ti.Network.createHTTPClient({
 	     // function called when the response data is available
-	     onload : function(e) {
-	         Ti.API.info("Received text: " + this.responseText);
-	         
+	     onload : function(e) {	         
          	var data = JSON.parse(this.responseText);
-	         console.log("data: "+typeof(data));    
-		   	// options.success(data);
+	        model.reset();
 		   	model.add(Alloy.createModel("engine",data));
-		   	console.log("parse: "+model.length);
-		   	model.trigger("change");
 	     },
 	     // function called when an error occurs, including a timeout
 	     onerror : function(e) {

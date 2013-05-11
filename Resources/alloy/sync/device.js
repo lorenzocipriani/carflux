@@ -6,10 +6,8 @@ module.exports.sync = function(method, model) {
         onload: function() {
             Ti.API.info("Received text: " + this.responseText);
             var data = JSON.parse(this.responseText);
-            console.log("data: " + typeof data);
+            model.reset();
             model.add(Alloy.createModel("engine", data));
-            console.log("parse: " + model.length);
-            model.trigger("change");
         },
         onerror: function(e) {
             Ti.API.debug(e.error);
